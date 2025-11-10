@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/viagens/:path*",
-      "destination": "http://56.124.107.104:8080/viagens/:path*"
+      "destination": "http://56.124.107.104:8080/:path*"
     }
   ]
 }

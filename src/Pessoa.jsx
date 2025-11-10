@@ -3,7 +3,9 @@ import React, { useEffect, useState } from "react";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 
-const BASE_URL = "http://localhost:8080";
+const IP = "56.124.107.104";
+
+const BASE_URL = `http://${IP}:8080`;
 
 
 export default function PessoasApp() {

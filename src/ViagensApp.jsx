@@ -3,8 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ?? "/viagens/";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
 const ROLE_NAMESPACE =
   import.meta.env.VITE_AUTH0_ROLE_NAMESPACE ??

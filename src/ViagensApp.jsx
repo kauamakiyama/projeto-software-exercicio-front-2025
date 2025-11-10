@@ -3,7 +3,8 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ?? "/viagens/";
 
 const ROLE_NAMESPACE =
   import.meta.env.VITE_AUTH0_ROLE_NAMESPACE ??
@@ -149,8 +150,8 @@ export default function ViagensApp() {
     }
 
     const dto = {
-      origemNome: origem.trim(),
-      destinoNome: destino.trim(),
+      nomeOrigem: origem.trim(),
+      nomeDestino: destino.trim(),
       descricao: descricao.trim() || null,
       modoTransporte: modoTransporte.trim(),
     };

@@ -119,8 +119,20 @@ export default function ViagensApp() {
   const roles = useMemo(() => {
     const fromToken = extractRolesFromSource(payload);
     const fromUser = extractRolesFromSource(user);
-    return new Set([...fromToken, ...fromUser]);
-  }, [payload, user]);
+    const merged = new Set([...fromToken, ...fromUser]);
+
+    if (import.meta.env.DEV) {
+      console.groupCollapsed("[ViagensApp] Depuração de roles");
+      console.log("Token bruto:", token);
+      console.log("Payload decodificado:", payload);
+      console.log("Roles (token):", fromToken);
+      console.log("Roles (user):", fromUser);
+      console.log("Roles combinadas:", Array.from(merged));
+      console.groupEnd();
+    }
+
+    return merged;
+  }, [payload, user, token]);
 
   const isAdmin = roles.has(ADMIN_ROLE);
 
